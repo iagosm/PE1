@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgba(245, 246, 251, 1) !important;
+}
+
+/* Pagina inicial de todos os Eventos */
+
+.container {
+  padding: 3rem;
+}
+
+.box-inicial {
+  margin-bottom: 2rem;
+}
+
+.box-inicial h1, .box-inicial-evento h1 {
+  font-size: 5rem !important;
+  padding: 2rem;
+  text-align: center;
+  color: rgba(30, 156, 197, 1) !important;
+}
+
+.box-inicial p {
+  font-size: 2rem !important;
+  text-align: center;
+  color: rgba(30, 156, 197, 1) !important;
+}
+
+.box-inicial i {
+  font-size: 1rem;
+}
+
+.box-inicial-evento p {
+  font-size: 16px !important;
+  text-align: center;
+  color: rgba(30, 156, 197, 1) !important;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+}
+
+.overlay a {
+  pointer-events: auto;
+  text-decoration: none;
+  color: rgba(30, 156, 197, 1) !important;
+}
+
+.overlay a:hover, .overlay i:hover {
+  color: rgba(30, 156, 197, 0.8) !important;
+  transition: .4s ease-in;
+}
+
+.caption {
+  font-size: 2rem;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: rgba(30, 156, 197, 1) !important;
+}
+
+.thumbnail {
+  padding-bottom: 1.25rem;
+}
+
+.thumbnail:hover {
+  transform: translateY(-4px);
+  transition: .5s ease-in-out;
+}
+
+.img-container:hover .overlay {
+  opacity: 1;
+}
+
+/* Evento */
+.capa-evento {
+  display: block; 
+  margin: 0 auto; 
+  border-radius: 6px ;
+  width: 900px; 
+  height: 500px;
+}
+
+.container-evento-info {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 30px !important;
+}
+
+.evento-descricao h3, .evento-servico h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.evento-descricao p {
+  font-size: 16px;
+}
+
+.servico-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid red;
+  margin: 20px;
+  max-height: 180px;
+}
+
+.servico-info .servico-pergunta {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.servico-info .servico-resposta {
+  font-size: 16px;
+}
