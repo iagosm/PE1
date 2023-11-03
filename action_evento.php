@@ -7,7 +7,8 @@ $eventos->verificaAction();
 $mensagem = (isset($_SESSION['mensagem'])) ? $_SESSION['mensagem'] : '';
 ?>
 <div class="container">
-  <div class="row">
+  <a href="tabela.php" id="back-tabela">Tabela</a>
+  <div class="row mt-4">
     <p><?php if(isset($mensagem) && $mensagem !== '') { echo $mensagem; };?></p>
     <?php unset($_SESSION['mensagem']); ?>
     <form method="post" enctype="multipart/form-data">

@@ -4,11 +4,6 @@ include 'header.php';
 include_once 'includes/evento.php';
 $eventos = new Evento();
 $array = $eventos->getAllEventos();
-// print_r($array);exit;
-// $classificacao = $array['classificacao'] . '+';
-// $posicao_images = strstr($array['imagem'], "images");
-// $caminho_relativo = substr($posicao_images, strpos($posicao_images, "images"));
-// $contato = $formatted_telefone = '(' . substr($array['contato'], 0, 2) . ') ' . substr($array['contato'], 2, 1) . ' ' . substr($array['contato'], 3, 4) . '-' . substr($array['contato'], 7, 4);
 ?>
 <body>
   <div class="container">

@@ -148,7 +148,7 @@ body {
   font-size: 16px;
   color: #4E342E;
 }
-#getAllEventos {
+#getAllEventos, .container #back-tabela, #add-event {
   text-decoration: none;
   padding: 10px;
   background: #0074e4;
@@ -157,6 +157,14 @@ body {
   color: white;
 }
 
-#getAllEventos:hover {  
+#getAllEventos:hover, .container #back-tabela:hover, #add-event:hover {  
   background: #0057a5;
+}
+
+table td{
+    padding: 20px;
+}
+.tabela-actions {
+  display: flex;
+  gap: 10px;
 }

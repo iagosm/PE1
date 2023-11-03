@@ -24,19 +24,25 @@
         case 'cadEvento':
           $mensagem = $this->cadEvento($data);
           $_SESSION['mensagem'] = $mensagem;
+          header("Location: action_evento.php");
           break;
         case 'editEvento':
           $mensagem = $this->editEvento($data);
           $_SESSION['mensagem'] = $mensagem;
-          break;
-        case 'delEvento':
-          $mensagem = $this->delEvento($data);
-          $_SESSION['mensagem'] = $mensagem;
+          header("Location: tabela.php");
           break;
         default:
         $_SESSION['mensagem'] = '';
       }
-      header("Location: action_evento.php");
+    }
+  }
+
+  function verificaActionGet() {
+    if(!empty($_GET)) {
+      $_SESSION['mensagem'] = '';
+      $id_evento = $_GET['id_evento'];
+      $mensagem = $this->delEvento($id_evento);
+      $_SESSION['mensagem'] = $mensagem;
     }
   }
 
@@ -82,7 +88,8 @@
   function editEvento($data) {
 
     $sql = "UPDATE evento SET titulo = :titulo, subtitulo = :subtitulo, descricao = :descricao, onde= :onde,
-    quando = :quando, atracoes = :atracoes, classificacao = :classificacao, realizacao =:realizacao, contato = :contato WHERE idevento = :id_evento";
+    quando = :quando, atracoes = :atracoes, classificacao = :classificacao, realizacao = :realizacao, contato = :contato 
+    WHERE id_evento = :id_evento";
     $sql = $this->connection->prepare($sql);
     $sql->bindValue(':titulo', $data['titulo']);
     $sql->bindValue(':subtitulo', $data['subtitulo']);
@@ -93,7 +100,7 @@
     $sql->bindValue(':classificacao', $data['classificacao']);
     $sql->bindValue(':realizacao', $data['realizacao']);
     $sql->bindValue(':contato', $data['contato']);
-    $sql->bindValue(':idevento', $data['idevento']);
+    $sql->bindValue(':id_evento', $data['id_evento']);
     $sql->execute();
     if($sql->rowCount() > 0) {
       return 'Evento alterado com sucesso';
@@ -105,7 +112,7 @@
 
     try {
 			$idevento = intval($idevento);
-			$sql = "DELETE FROM evento WHERE idevento = '$idevento'";
+			$sql = "DELETE FROM evento WHERE id_evento = '$idevento'";
 			$sql = $this->connection->query($sql);
 			
 			if($sql->rowCount() > 0){ return 'Evento excluido com sucesso';}
