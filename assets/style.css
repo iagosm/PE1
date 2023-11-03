@@ -28,13 +28,13 @@ body {
   font-size: 5rem !important;
   padding: 2rem;
   text-align: center;
-  color: rgba(30, 156, 197, 1) !important;
+  color: #4E342E !important;
 }
 
 .box-inicial p {
   font-size: 2rem !important;
   text-align: center;
-  color: rgba(30, 156, 197, 1) !important;
+  color: #4E342E !important;
 }
 
 .box-inicial i {
@@ -44,12 +44,14 @@ body {
 .box-inicial-evento p {
   font-size: 16px !important;
   text-align: center;
-  color: rgba(30, 156, 197, 1) !important;
+  color: #4E342E !important;
 }
 
 .image {
   display: block;
   width: 100%;
+  height: 260px;
+  object-fit: cover; 
   border-radius: 6px;
 }
 
@@ -110,34 +112,51 @@ body {
 }
 
 .container-evento-info {
-  border: 1px solid black;
+  border: 1px solid #4E342E;
   border-radius: 5px;
   padding: 30px !important;
 }
 
 .evento-descricao h3, .evento-servico h3 {
+  color: #444;
   font-size: 32px;
   margin-bottom: 20px;
 }
 
 .evento-descricao p {
   font-size: 16px;
+  color: #4E342E;
 }
 
 .servico-info {
   display: flex;
   align-items: center;
   gap: 10px;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid black;
   margin: 20px;
+  padding: 8px !important;
   max-height: 180px;
 }
 
 .servico-info .servico-pergunta {
   font-size: 18px;
   font-weight: 700;
+  color: #444;
 }
 
 .servico-info .servico-resposta {
   font-size: 16px;
+  color: #4E342E;
+}
+#getAllEventos {
+  text-decoration: none;
+  padding: 10px;
+  background: #0074e4;
+  border-radius: 6px;
+  font-size: 18px;
+  color: white;
+}
+
+#getAllEventos:hover {  
+  background: #0057a5;
 }

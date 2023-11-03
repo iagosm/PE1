@@ -112,4 +112,29 @@
 		} catch (\Throwable $th) {}
     return 'Erro ao deletar evento';
   }
+
+  function getEvento() {
+
+    if(!empty($_GET)) {
+      $id_evento = $_GET['id_evento'];
+      $sql = "SELECT * FROM `evento` WHERE id_evento = '$id_evento'";
+      $sql = $this->connection->query($sql);
+      if($sql->rowCount() > 0) {
+        return $sql->fetch(\PDO::FETCH_ASSOC);
+      }
+      return array();
+    } else {
+      header("Location: index.php");
+    }
+  }
+
+  function getAllEventos() {
+
+    $sql = "SELECT * FROM `evento`";
+    $sql = $this->connection->query($sql);
+    if($sql->rowCount() > 0) {
+      return $sql->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    return array();
+  }
 }
